@@ -7,3 +7,4 @@ Neste cenário, você utilizará **Terraform** com o **LocalStack** para simular
 1. Verifique se o LocalStack está rodando:
    ```bash
    docker ps
+   ```
