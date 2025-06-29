@@ -1,6 +1,38 @@
 {
-  "title": "Ubuntu simple",
-  "backend": {
-    "imageid": "ubuntu"
+  "title": "Terraform + LocalStack AWS Lab",
+  "description": "Ambiente interativo com Terraform utilizando LocalStack para simular recursos AWS como EC2, S3, RDS, EKS, VPC e Load Balancer.",
+  "difficulty": "Intermediate",
+  "details": {
+    "steps": [
+      { "title": "Introdução e Setup", "text": "intro.md" },
+      { "title": "Provisionar S3, EC2, VPC e RDS", "text": "step2-s3-ec2-vpc.md" },
+      { "title": "Criar Load Balancer e EKS", "text": "step3-eks-lb.md" },
+      { "title": "Comandos Terraform", "text": "step4-commands.md" },
+      { "title": "Detectar Drift", "text": "step5-drift.md" },
+      { "title": "Avaliação Prática", "text": "step6-evaluation.md" }
+    ],
+    "environment": {
+      "showdashboard": true,
+      "uilayout": "terminal"
+    }
+  },
+  "environment": {
+    "image": "ubuntu:2204",
+    "setup": [
+      "apt update && apt install -y unzip curl docker.io awscli",
+      "curl -fsSL https://releases.hashicorp.com/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip -o terraform.zip",
+      "unzip terraform.zip && mv terraform /usr/local/bin/",
+      "docker run -d -p 4566:4566 -p 4571:4571 localstack/localstack"
+    ],
+    "ports": [4566],
+    "timeout": 3600
+  },
+  "assets": {
+    "files": [
+      { "name": "main.tf", "path": "files/main.tf" },
+      { "name": "variables.tf", "path": "files/variables.tf" },
+      { "name": "outputs.tf", "path": "files/outputs.tf" },
+      { "name": "backend.tf", "path": "files/backend.tf" }
+    ]
   }
 }
