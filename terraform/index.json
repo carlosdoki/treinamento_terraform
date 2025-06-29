@@ -4,12 +4,7 @@
   "difficulty": "Intermediate",
   "details": {
     "steps": [
-      { "title": "Introdução e Setup", "text": "intro.md" },
-      { "title": "Provisionar S3, EC2, VPC e RDS", "text": "step2-s3-ec2-vpc.md" },
-      { "title": "Criar Load Balancer e EKS", "text": "step3-eks-lb.md" },
-      { "title": "Comandos Terraform", "text": "step4-commands.md" },
-      { "title": "Detectar Drift", "text": "step5-drift.md" },
-      { "title": "Avaliação Prática", "text": "step6-evaluation.md" }
+      { "title": "Introdução e Setup", "text": "intro.md" }
     ],
     "environment": {
       "showdashboard": true,
@@ -18,13 +13,5 @@
   },
   "backend": {
     "imageid": "ubuntu"
-  },
-  "assets": {
-    "files": [
-      { "name": "main.tf", "path": "files/main.tf" },
-      { "name": "variables.tf", "path": "files/variables.tf" },
-      { "name": "outputs.tf", "path": "files/outputs.tf" },
-      { "name": "backend.tf", "path": "files/backend.tf" }
-    ]
   }
 }
